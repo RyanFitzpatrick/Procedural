@@ -10,7 +10,7 @@ Build: Main TriTree
 Main:
 	gcc $(CFLAGS) ../Source/Main.c -I../Headers -o ../Clean/Main.o
 
-HashMap:
+TriTree:
 	gcc $(CFLAGS) ../Source/TriTree.c -I../Headers -o ../Clean/TriTree.o
 
 Clean:
