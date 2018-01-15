@@ -1,7 +1,7 @@
 /* Memory.h: Defines various macros used for memory management */
 
-#ifndef _CH_MEMORY_
-#define _CH_MEMORY_
+#ifndef _MEMORY_
+#define _MEMORY_
 
 /* Memory.h requires the malloc and free functions defined in stdlib.h */
 #ifndef _STDLIB_
