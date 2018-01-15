@@ -127,6 +127,7 @@ del $(SolutionDir)Clean\*.CppClean.log</Command>
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Headers\Memory.h" />
     <ClInclude Include="..\Headers\TriTree.h" />
   </ItemGroup>
   <ItemGroup>
