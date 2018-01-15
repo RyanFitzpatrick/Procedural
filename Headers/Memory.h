@@ -19,7 +19,12 @@
 /* NOTE: If realloc fails this macro will jump to the FAIL label, so the calling code must have a FAIL label */
 /* Param1 ptr: The pointer to be reallocated */
 /* Param2 size: The size of the memory to point at, clean up with DiscardMem */
-#define ResizeMem(ptr, size) { void * __ResizeMem__ = NULL; if ((__ResizeMem__ = realloc(ptr, size)) == NULL) goto FAIL; ptr = __ResizeMem__; }
+#define ResizeMem(ptr, size) \
+{ \
+    void * __ResizeMem__ = NULL; \
+    if ((__ResizeMem__ = realloc(ptr, size)) == NULL) goto FAIL; \
+    ptr = __ResizeMem__; \
+}
 
 /* Releases a pointer using free */
 /* Param1 ptr: The pointer to be released */
