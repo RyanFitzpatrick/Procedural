@@ -61,13 +61,10 @@ static int Force(TriTree * tree)
     {
         if (tree->sides[LEFT]->sides[BOTTOM] == tree)
             tree->sides[LEFT]->sides[BOTTOM] = tree->left;
+        else if (tree->sides[LEFT]->sides[LEFT] == tree)
+            tree->sides[LEFT]->sides[LEFT] = tree->left;
         else
-        {
-            if (tree->sides[LEFT]->sides[LEFT] == tree)
-                tree->sides[LEFT]->sides[LEFT] = tree->left;
-            else
-                tree->sides[LEFT]->sides[RIGHT] = tree->left;
-        }
+            tree->sides[LEFT]->sides[RIGHT] = tree->left;
     }
 
     tree->right->sides[BOTTOM] = tree->sides[RIGHT];
@@ -76,13 +73,10 @@ static int Force(TriTree * tree)
     {
         if (tree->sides[RIGHT]->sides[BOTTOM] == tree)
             tree->sides[RIGHT]->sides[BOTTOM] = tree->right;
+        else if (tree->sides[RIGHT]->sides[RIGHT] == tree)
+            tree->sides[RIGHT]->sides[RIGHT] = tree->right;
         else
-        {
-            if (tree->sides[RIGHT]->sides[RIGHT] == tree)
-                tree->sides[RIGHT]->sides[RIGHT] = tree->right;
-            else
-                tree->sides[RIGHT]->sides[LEFT] = tree->right;
-        }
+            tree->sides[RIGHT]->sides[LEFT] = tree->right;
     }
 
     return 1;
