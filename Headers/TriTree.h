@@ -12,6 +12,9 @@ typedef struct TriTree
     struct TriTree * right;
 } TriTree;
 
-int hi();
+TriTree * _BuildTriTree();
+void DiscardTriTree(TriTree *);
+
+#define BuildTriTree(tree) if ((tree = _BuildTriTree()) == NULL) goto FAIL
 
 #endif
