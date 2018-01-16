@@ -5,10 +5,16 @@ All: Clean Build Run
 Run:
 	gcc ../Clean/*.o -o ../Main/Main
 
-Build: Main TriTree
+Build: Main Map Noise TriTree
 
 Main:
 	gcc $(CFLAGS) ../Source/Main.c -I../Headers -o ../Clean/Main.o
+
+Map:
+	gcc &(CFLAGS) ../Source/Map.c -I../Headers -o ../Clean/Map.o
+
+Noise:
+	gcc $(CFLAGS) ../Source/Noise.c -I../Headers -o ../Clean/Noise.o
 
 TriTree:
 	gcc $(CFLAGS) ../Source/TriTree.c -I../Headers -o ../Clean/TriTree.o

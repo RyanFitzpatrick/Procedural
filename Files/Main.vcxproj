@@ -127,11 +127,15 @@ del $(SolutionDir)Clean\*.CppClean.log</Command>
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Headers\Map.h" />
     <ClInclude Include="..\Headers\Memory.h" />
+    <ClInclude Include="..\Headers\Noise.h" />
     <ClInclude Include="..\Headers\TriTree.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Main.c" />
+    <ClCompile Include="..\Source\Map.c" />
+    <ClCompile Include="..\Source\Noise.c" />
     <ClCompile Include="..\Source\TriTree.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
