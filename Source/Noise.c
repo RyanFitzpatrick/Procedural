@@ -1,6 +1,6 @@
 #include "Noise.h"
 
-int Noise()
+uint16_t Perlin(uint32_t x, uint32_t y)
 {
-    return 0;
+    return (x * y) & UINT16_MAX;
 }
