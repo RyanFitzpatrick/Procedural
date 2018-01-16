@@ -13,8 +13,10 @@ typedef struct TriTree
 } TriTree;
 
 TriTree * _BuildTriTree();
+int _SplitTriTree(TriTree *);
 void DiscardTriTree(TriTree *);
 
 #define BuildTriTree(tree) if ((tree = _BuildTriTree()) == NULL) goto FAIL
+#define SplitTriTree(tree) if (!_SplitTriTree(tree)) goto FAIL
 
 #endif
