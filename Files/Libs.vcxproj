@@ -108,7 +108,9 @@ del $(IntDir)*.CppClean.log</Command>
     </PostBuildEvent>
     <CustomBuildStep>
       <Command>del $(IntDir)*.CppClean.log
-del $(OutDir)$(SolutionName).*</Command>
+del $(OutDir)$(SolutionName).dll</Command>
+      <Outputs>
+      </Outputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -142,7 +144,7 @@ del $(OutDir)$(SolutionName).*</Command>
       </StackReserveSize>
     </Link>
     <PostBuildEvent>
-      <Command>LINK.EXE /DLL /OUT:"$(OutDir)$(SolutionName).dll" $(IntDir)*.obj
+      <Command>LINK.EXE /DLL /LTCG /OUT:"$(OutDir)$(SolutionName).dll" $(IntDir)*.obj
 for /d %%G in ("$(IntDir)*.tlog") do rd /s /q "%%~G"
 del $(IntDir)*.CppClean.log</Command>
     </PostBuildEvent>
