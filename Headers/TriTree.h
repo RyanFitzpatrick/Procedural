@@ -12,7 +12,7 @@ typedef struct TriTree
     struct TriTree * right;
 } TriTree;
 
-TriTree * _BuildTriTree();
+TriTree * _BuildTriTree(void);
 int _SplitTriTree(TriTree *);
 void DiscardTriTree(TriTree *);
 

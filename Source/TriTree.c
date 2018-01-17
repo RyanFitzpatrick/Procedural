@@ -3,7 +3,7 @@
 
 static int Force(TriTree *);
 
-TriTree * _BuildTriTree()
+TriTree * _BuildTriTree(void)
 {
     TriTree * tree = NULL;
 

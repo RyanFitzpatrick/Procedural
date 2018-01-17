@@ -12,7 +12,7 @@ int main()
     BuildTriTree(tree);
     DiscardTriTree(tree);
 
-    BuildMap(map, LO);
+    BuildMap(map, MAX);
     DiscardMap(map);
     Say("Hi\n");
 
