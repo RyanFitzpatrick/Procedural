@@ -39,7 +39,7 @@ int _SplitTriTree(TriTree * tree)
     {
         /* Determine if we need to recursively split the bottom triangle to avoid mesh cracks */
         if (tree->sides[BOTTOM]->sides[BOTTOM] != tree)
-            _SplitTriTree(tree->sides[BOTTOM]);
+            SplitTriTree(tree->sides[BOTTOM]);
 
         /* Split the current node and it's bottom side neighbour */
         if (!Force(tree)) goto FAIL;
