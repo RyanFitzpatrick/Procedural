@@ -73,12 +73,12 @@
     <OutDir>$(SolutionDir)Main\</OutDir>
     <IntDir>$(SolutionDir)Clean\</IntDir>
     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
-    <ExtensionsToDeleteOnClean>Main.pdb;Main.obj;*.cdf;*.cache;*.obj.enc;*.ilk;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.idb;*.rep;*.xdc;*_manifest.rc;*.bsc;*.sbr;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
+    <ExtensionsToDeleteOnClean>Main.pdb;Main.obj;*.cdf;*.cache;*.obj.enc;*.ilk;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.rep;*.xdc;*_manifest.rc;*.bsc;*.sbr;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)Main\</OutDir>
     <IntDir>$(SolutionDir)Clean\</IntDir>
-    <ExtensionsToDeleteOnClean>Main.pdb;Main.obj;*.cdf;*.cache;*.obj.enc;*.ilk;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.idb;*.rep;*.xdc;*_manifest.rc;*.bsc;*.sbr;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
+    <ExtensionsToDeleteOnClean>Main.pdb;Main.obj;*.cdf;*.cache;*.obj.enc;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.rep;*.xdc;*_manifest.rc;*.bsc;*.sbr;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -89,11 +89,11 @@
       <AdditionalIncludeDirectories>$(SolutionDir)Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <PostBuildEvent>
-      <Command>rmdir $(SolutionDir)Clean\$(ProjectName).tlog /s /q
-del $(SolutionDir)Clean\*.CppClean.log</Command>
+      <Command>for /d %%G in ("$(IntDir)*.tlog") do rd /s /q "%%~G"
+del $(IntDir)*.CppClean.log</Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>del $(SolutionDir)Clean\*.CppClean.log</Command>
+      <Command>del $(IntDir)*.CppClean.log</Command>
     </CustomBuildStep>
     <Link>
       <AdditionalLibraryDirectories>
@@ -137,11 +137,11 @@ del $(SolutionDir)Clean\*.CppClean.log</Command>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>rmdir $(SolutionDir)Clean\$(ProjectName).tlog /s /q
-del $(SolutionDir)Clean\*.CppClean.log</Command>
+      <Command>for /d %%G in ("$(IntDir)*.tlog") do rd /s /q "%%~G"
+del $(IntDir)*.CppClean.log</Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>del $(SolutionDir)Clean\*.CppClean.log</Command>
+      <Command>del $(IntDir)*.CppClean.log</Command>
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>

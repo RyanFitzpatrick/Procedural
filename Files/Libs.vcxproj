@@ -102,12 +102,12 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <PostBuildEvent>
-      <Command>LINK.EXE /DLL /OUT:"$(SolutionDir)Main\$(SolutionName).dll" $(SolutionDir)Clean\*.obj
-rmdir $(SolutionDir)Clean\$(ProjectName).tlog /s /q
-del $(SolutionDir)Clean\*.CppClean.log</Command>
+      <Command>LINK.EXE /DLL /OUT:"$(OutDir)$(SolutionName).dll" $(IntDir)*.obj
+for /d %%G in ("$(IntDir)*.tlog") do rd /s /q "%%~G"
+del $(IntDir)*.CppClean.log</Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>del $(SolutionDir)Clean\*.CppClean.log
+      <Command>del $(IntDir)*.CppClean.log
 del $(OutDir)$(SolutionName).*</Command>
     </CustomBuildStep>
   </ItemDefinitionGroup>
@@ -142,12 +142,12 @@ del $(OutDir)$(SolutionName).*</Command>
       </StackReserveSize>
     </Link>
     <PostBuildEvent>
-      <Command>LINK.EXE /DLL /OUT:"$(SolutionDir)Main\$(SolutionName).dll" $(SolutionDir)Clean\*.obj
-rmdir $(SolutionDir)Clean\$(ProjectName).tlog /s /q
-del $(SolutionDir)Clean\*.CppClean.log</Command>
+      <Command>LINK.EXE /DLL /OUT:"$(OutDir)$(SolutionName).dll" $(IntDir)*.obj
+for /d %%G in ("$(IntDir)*.tlog") do rd /s /q "%%~G"
+del $(IntDir)*.CppClean.log</Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>del $(SolutionDir)Clean\*.CppClean.log
+      <Command>del $(IntDir)*.CppClean.log
 del $(OutDir)$(SolutionName).*
 </Command>
     </CustomBuildStep>
