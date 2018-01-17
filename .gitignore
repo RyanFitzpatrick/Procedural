@@ -1,7 +1,6 @@
 .DS_STORE
 .vs
 .vs/*
-Files/*.vcxproj.*
 Main/*.ilk
 Main/*.iobj
 Main/*.ipdb
