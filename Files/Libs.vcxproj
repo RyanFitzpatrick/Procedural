@@ -122,6 +122,7 @@ del $(OutDir)$(SolutionName).dll</Command>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)Resources\Libs\Win64\GLEW;$(SolutionDir)Resources\Libs\Win64\SDL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <TreatLibWarningAsErrors>true</TreatLibWarningAsErrors>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -167,6 +168,7 @@ del $(OutDir)$(SolutionName).*
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)Resources\Libs\Win64\GLEW;$(SolutionDir)Resources\Libs\Win64\SDL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <TreatLibWarningAsErrors>true</TreatLibWarningAsErrors>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>

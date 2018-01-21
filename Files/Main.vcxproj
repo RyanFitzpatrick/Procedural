@@ -106,6 +106,7 @@ del $(IntDir)*.CppClean.log</Command>
       <AdditionalLibraryDirectories>$(SolutionDir)Main;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Procedural.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
+      <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -147,6 +148,7 @@ del $(IntDir)*.CppClean.log</Command>
       <AdditionalLibraryDirectories>$(SolutionDir)Main;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Procedural.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
+      <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
     </Link>
     <PostBuildEvent>
       <Command>for /d %%G in ("$(IntDir)*.tlog") do rd /s /q "%%~G"
@@ -158,11 +160,6 @@ del $(IntDir)*.CppClean.log</Command>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Main.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Libs.vcxproj">
-      <Project>{c6a848ac-7ad3-49af-8b4e-2c8ee28e9137}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
