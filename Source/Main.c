@@ -1,10 +1,11 @@
+#include "SDL.h"
 #include "Map.h"
 #include "TriTree.h"
 #include <stdio.h>
 
 #define Say(word) printf(word); getchar();
 
-int main()
+int main(int argc, char * argv[])
 {
     TriTree * tree = NULL;
     Map * map = NULL;
