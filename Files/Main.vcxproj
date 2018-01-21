@@ -103,7 +103,7 @@ del $(IntDir)*.CppClean.log</Command>
     </CustomBuildStep>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)Main;$(SolutionDir)Resources\Libs\Win64\GLEW;$(SolutionDir)Resources\Libs\Win64\SDL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Procedural.lib;glew32s.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Procedural.lib;opengl32.lib;glew32s.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -143,7 +143,7 @@ del $(IntDir)*.CppClean.log</Command>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(SolutionDir)Main;$(SolutionDir)Resources\Libs\Win64\GLEW;$(SolutionDir)Resources\Libs\Win64\SDL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Procedural.lib;glew32s.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Procedural.lib;opengl32.lib;glew32s.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
     <PostBuildEvent>
