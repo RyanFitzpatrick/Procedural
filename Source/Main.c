@@ -1,3 +1,5 @@
+#define GLEW_STATIC
+#include "glew.h"
 #include "SDL.h"
 #include "Map.h"
 #include "TriTree.h"
