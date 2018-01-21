@@ -24,6 +24,9 @@
     <ClInclude Include="..\Headers\TriTree.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="..\Headers\Procedural.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Headers">

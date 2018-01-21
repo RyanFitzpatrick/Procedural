@@ -91,8 +91,9 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Headers;$(SolutionDir)Resources\Libs\Win64\GLEW;$(SolutionDir)Resources\Libs\Win64\SDL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Headers;$(SolutionDir)Resources/Libs/Win64/GLEW;$(SolutionDir)Resources/Libs/Win64/SDL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <PostBuildEvent>
       <Command>for /d %%G in ("$(IntDir)*.tlog") do rd /s /q "%%~G"
@@ -102,8 +103,8 @@ del $(IntDir)*.CppClean.log</Command>
       <Command>del $(IntDir)*.CppClean.log</Command>
     </CustomBuildStep>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)Main;$(SolutionDir)Resources\Libs\Win64\GLEW;$(SolutionDir)Resources\Libs\Win64\SDL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Procedural.lib;opengl32.lib;glew32s.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Main;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Procedural.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -138,12 +139,13 @@ del $(IntDir)*.CppClean.log</Command>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Headers;$(SolutionDir)Resources\Libs\Win64\GLEW;$(SolutionDir)Resources\Libs\Win64\SDL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)Main;$(SolutionDir)Resources\Libs\Win64\GLEW;$(SolutionDir)Resources\Libs\Win64\SDL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Procedural.lib;opengl32.lib;glew32s.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Main;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Procedural.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
     <PostBuildEvent>

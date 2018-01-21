@@ -1,8 +1,4 @@
-#define GLEW_STATIC
-#include "glew.h"
-#include "SDL.h"
-#include "Map.h"
-#include "TriTree.h"
+#include "Procedural.h"
 #include <stdio.h>
 
 #define Say(word) printf(word); getchar();
