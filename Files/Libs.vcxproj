@@ -78,14 +78,16 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)Main\</OutDir>
     <IntDir>$(SolutionDir)Clean\</IntDir>
-    <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+    <CustomBuildAfterTargets>
+    </CustomBuildAfterTargets>
     <TargetName>$(SolutionName)</TargetName>
     <ExtensionsToDeleteOnClean>$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)Main\</OutDir>
     <IntDir>$(SolutionDir)Clean\</IntDir>
-    <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+    <CustomBuildAfterTargets>
+    </CustomBuildAfterTargets>
     <TargetName>$(SolutionName)</TargetName>
     <ExtensionsToDeleteOnClean>$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
   </PropertyGroup>
@@ -99,29 +101,31 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Headers;$(SolutionDir)Resources\Libs\Win64\GLEW;$(SolutionDir)Resources\Libs\Win64\SDL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4711</DisableSpecificWarnings>
     </ClCompile>
     <PostBuildEvent>
       <Command>for /d %%G in ("$(IntDir)*.tlog") do rd /s /q "%%~G"
 del $(IntDir)*.CppClean.log</Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>del $(IntDir)*.CppClean.log
-del $(OutDir)$(SolutionName).dll</Command>
+      <Command>
+      </Command>
       <Outputs>
       </Outputs>
     </CustomBuildStep>
     <Lib>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)Resources\Libs\Win64\GLEW;$(SolutionDir)Resources\Libs\Win64\SDL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <TreatLibWarningAsErrors>true</TreatLibWarningAsErrors>
     </Lib>
   </ItemDefinitionGroup>
@@ -141,14 +145,16 @@ del $(OutDir)$(SolutionName).dll</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Headers;$(SolutionDir)Resources\Libs\Win64\GLEW;$(SolutionDir)Resources\Libs\Win64\SDL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4711;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -161,13 +167,12 @@ del $(OutDir)$(SolutionName).dll</Command>
 del $(IntDir)*.CppClean.log</Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>del $(IntDir)*.CppClean.log
-del $(OutDir)$(SolutionName).*
-</Command>
+      <Command>
+      </Command>
     </CustomBuildStep>
     <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)Resources\Libs\Win64\GLEW;$(SolutionDir)Resources\Libs\Win64\SDL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <TreatLibWarningAsErrors>true</TreatLibWarningAsErrors>
     </Lib>
   </ItemDefinitionGroup>

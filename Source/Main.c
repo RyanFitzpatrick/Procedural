@@ -1,9 +1,9 @@
 #include "Procedural.h"
 #include <stdio.h>
 
-#define Say(word) printf(word); getchar();
+#define Say(word) puts(word); getchar();
 
-int main(int argc, char * argv[])
+int main(void)
 {
     TriTree * tree = NULL;
     Map * map = NULL;

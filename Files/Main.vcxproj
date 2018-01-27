@@ -77,7 +77,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)Main\</OutDir>
     <IntDir>$(SolutionDir)Clean\</IntDir>
-    <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+    <CustomBuildAfterTargets>
+    </CustomBuildAfterTargets>
     <ExtensionsToDeleteOnClean>Main.pdb;Main.obj;*.cdf;*.cache;*.obj.enc;*.ilk;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.rep;*.xdc;*_manifest.rc;*.bsc;*.sbr;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -87,20 +88,23 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Headers;$(SolutionDir)Resources/Libs/Win64/GLEW;$(SolutionDir)Resources/Libs/Win64/SDL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4711</DisableSpecificWarnings>
     </ClCompile>
     <PostBuildEvent>
       <Command>for /d %%G in ("$(IntDir)*.tlog") do rd /s /q "%%~G"
 del $(IntDir)*.CppClean.log</Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>del $(IntDir)*.CppClean.log</Command>
+      <Command>
+      </Command>
     </CustomBuildStep>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)Main;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -133,14 +137,16 @@ del $(IntDir)*.CppClean.log</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Headers;$(SolutionDir)Resources\Libs\Win64\GLEW;$(SolutionDir)Resources\Libs\Win64\SDL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4711</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -155,11 +161,17 @@ del $(IntDir)*.CppClean.log</Command>
 del $(IntDir)*.CppClean.log</Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>del $(IntDir)*.CppClean.log</Command>
+      <Command>
+      </Command>
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Main.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Libs.vcxproj">
+      <Project>{c6a848ac-7ad3-49af-8b4e-2c8ee28e9137}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
