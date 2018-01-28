@@ -3,6 +3,8 @@
 #ifndef _TRITREE_
 #define _TRITREE_
 
+#include "Macros.h"
+
 /* A constant rerpresenting the index in a TriTree's sides array that corresponds to the bottom side */
 #define BOTTOM 0
 /* A constant rerpresenting the index in a TriTree's sides array that corresponds to the left side */
@@ -24,17 +26,17 @@ typedef struct TriTree
 /* Initalizes a new binary triangle tree */
 /* NOTE: It's recommended to use the BuildTriTree macro instead of calling this directly */
 /* Returns (TriTree *): A pointer to a newly allocated binary triangle tree, or NULL on error */
-TriTree * _BuildTriTree(void);
+PROCEDURAL_API TriTree * _BuildTriTree(void);
 
 /* Splits a binary triangle tree node into 2 new triangles */
 /* NOTE: It's recommended to use the SplitTriTree macro instead of calling this directly */
 /* Param1 (TriTree *): A pointer to the binary triangle tree node to be split */
 /* Returns (int): 1 if split was successful, 0 otherwise */
-int _SplitTriTree(TriTree *);
+PROCEDURAL_API int _SplitTriTree(TriTree *);
 
 /* Frees all memory used by a binary triangle tree */
 /* Param1 (TriTree *): A pointer to the binary triangle tree to be freed */
-void DiscardTriTree(TriTree *);
+PROCEDURAL_API void DiscardTriTree(TriTree *);
 
 /* Calls _BuildTriTree to initalize a binary triangle tree and handles any errors */
 /* NOTE: This macro jumps to the FAIL label on error, so the calling code must have a FAIL label */

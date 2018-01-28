@@ -6,6 +6,8 @@
 #pragma pack(1)
 #endif
 
+#include "Macros.h"
+
 #ifndef _STDINT_
 #define _STDINT_
 #include <stdint.h>
@@ -28,9 +30,9 @@ typedef struct Map
     uint16_t * values;
 } Map;
 
-Map * _BuildMap(MapSize);
-void FillMap(Map *);
-void DiscardMap(Map *);
+PROCEDURAL_API Map * _BuildMap(MapSize);
+PROCEDURAL_API void FillMap(Map *);
+PROCEDURAL_API void DiscardMap(Map *);
 
 #define BuildMap(map, size) if ((map = _BuildMap(size)) == NULL) goto FAIL
 
