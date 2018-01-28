@@ -3,6 +3,7 @@
 #ifndef _TRITREE_
 #define _TRITREE_
 
+/* TriTree.h requires the PROCEDURAL_API macro defined in Macros.h */
 #include "Macros.h"
 
 /* A constant rerpresenting the index in a TriTree's sides array that corresponds to the bottom side */

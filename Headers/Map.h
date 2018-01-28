@@ -8,9 +8,9 @@
 
 #include "Macros.h"
 
-#ifndef _STDINT_
-#define _STDINT_
+#ifndef _STDINT_H_
 #include <stdint.h>
+#define _STDINT_H_
 #endif
 
 typedef enum

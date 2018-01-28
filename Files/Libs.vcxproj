@@ -192,6 +192,7 @@ del $(IntDir)*.CppClean.log</Command>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Headers\Libs.h" />
     <ClInclude Include="..\Headers\Macros.h" />
     <ClInclude Include="..\Headers\Map.h" />
     <ClInclude Include="..\Headers\Memory.h" />

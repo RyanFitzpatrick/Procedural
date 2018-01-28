@@ -4,15 +4,15 @@
 #define _MEMORY_
 
 /* Memory.h requires the errno variable and codes defined in errno.h */
-#ifndef _ERRNO_
-#define _ERRNO_
+#ifndef _ERRNO_H_
 #include <errno.h>
+#define _ERRNO_H_
 #endif
 
 /* Memory.h requires the malloc and free functions defined in stdlib.h */
-#ifndef _STDLIB_
-#define _STDLIB_
+#ifndef _STDLIB_H_
 #include <stdlib.h>
+#define _STDLIB_H_
 #endif
 
 /* Allocates a new pointer using malloc */

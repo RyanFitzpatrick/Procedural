@@ -1,10 +1,5 @@
 #include "Noise.h"
-
-#ifdef _WIN32
-#pragma warning(push, 0)
-#include "SDL.h"
-#pragma warning(pop)
-#endif
+#include "Libs.h"
 
 uint16_t Perlin(uint32_t x, uint32_t y)
 {
