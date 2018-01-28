@@ -80,11 +80,15 @@
     <CustomBuildAfterTargets>
     </CustomBuildAfterTargets>
     <ExtensionsToDeleteOnClean>Main.pdb;Main.obj;*.cdf;*.cache;*.obj.enc;*.ilk;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.rep;*.xdc;*_manifest.rc;*.bsc;*.sbr;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
+    <ReferencePath>
+    </ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)Main\</OutDir>
     <IntDir>$(SolutionDir)Clean\</IntDir>
     <ExtensionsToDeleteOnClean>Main.pdb;Main.obj;*.cdf;*.cache;*.obj.enc;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.rep;*.xdc;*_manifest.rc;*.bsc;*.sbr;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
+    <ReferencePath>
+    </ReferencePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -96,7 +100,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <TreatWarningAsError>true</TreatWarningAsError>
       <CompileAs>CompileAsC</CompileAs>
-      <DisableSpecificWarnings>4711</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4710;4711</DisableSpecificWarnings>
     </ClCompile>
     <PostBuildEvent>
       <Command>for /d %%G in ("$(IntDir)*.tlog") do rd /s /q "%%~G"
@@ -146,7 +150,7 @@ del $(IntDir)*.CppClean.log</Command>
       <AdditionalIncludeDirectories>$(SolutionDir)Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
       <CompileAs>CompileAsC</CompileAs>
-      <DisableSpecificWarnings>4711</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4710;4711</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>

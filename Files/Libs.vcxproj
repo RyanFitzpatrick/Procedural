@@ -82,6 +82,8 @@
     </CustomBuildAfterTargets>
     <TargetName>$(SolutionName)</TargetName>
     <ExtensionsToDeleteOnClean>$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
+    <ReferencePath>
+    </ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)Main\</OutDir>
@@ -90,6 +92,8 @@
     </CustomBuildAfterTargets>
     <TargetName>$(SolutionName)</TargetName>
     <ExtensionsToDeleteOnClean>$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
+    <ReferencePath>
+    </ReferencePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -105,11 +109,11 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Headers;$(SolutionDir)Resources\Libs\Win64\SDL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <TreatWarningAsError>true</TreatWarningAsError>
       <CompileAs>CompileAsC</CompileAs>
-      <DisableSpecificWarnings>4711</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4710;4711</DisableSpecificWarnings>
       <PreprocessorDefinitions>PROCEDURAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <PostBuildEvent>
@@ -131,6 +135,8 @@ del $(IntDir)*.CppClean.log</Command>
     </Lib>
     <Link>
       <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
+      <AdditionalLibraryDirectories>$(SolutionDir)Resources\Libs\Win64\SDL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -155,10 +161,10 @@ del $(IntDir)*.CppClean.log</Command>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Headers;$(SolutionDir)Resources\Libs\Win64\SDL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
       <CompileAs>CompileAsC</CompileAs>
-      <DisableSpecificWarnings>4711;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4710;4711</DisableSpecificWarnings>
       <PreprocessorDefinitions>PROCEDURAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -168,6 +174,8 @@ del $(IntDir)*.CppClean.log</Command>
       </StackReserveSize>
       <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
       <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>$(SolutionDir)Resources\Libs\Win64\SDL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>for /d %%G in ("$(IntDir)*.tlog") do rd /s /q "%%~G"

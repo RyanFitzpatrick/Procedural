@@ -7,6 +7,9 @@ int main(void)
 {
     TriTree * tree = NULL;
     Map * map = NULL;
+    uint16_t perlin = Perlin(10, 20);
+
+    printf("%d\n", perlin);
 
     BuildTriTree(tree);
     DiscardTriTree(tree);
